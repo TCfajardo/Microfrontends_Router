@@ -47,7 +47,7 @@ module.exports = (_, argv) => ({
         "./CardsComponent": "./src/components/CardsComponents.jsx",
         "./Loading": "./src/components/Loading.jsx",
         "./useFetchPhotos": "./src/Hooks/UseFetchPhotos.js",
-        //"./DetailPage": "./src/components/DetailPages.jsx",
+        "./DetailComponent": "./src/components/DetailPages.jsx",
       },      
       shared: {
         ...deps,

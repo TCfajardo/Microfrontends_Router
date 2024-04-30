@@ -1,15 +1,16 @@
 import React from 'react';
-import DetailPage from 'mfTags/DetailPage';
+import { PhotosProvider } from 'mfTags/useFetchPhotos'; 
+import DetailComponent from 'mfTags/DetailComponent';
 
-const DetailPagePhoto = () => {
-    return (
+const DetailPage = () => (
+    <PhotosProvider>
         <div style={{ textAlign: 'center' }}>
-            <h1>Detail</h1>
-            <div style={{ padding: '7%' }}>
-                <DetailPage /> 
+            <h1>Detalle</h1>
+            <div style={{ padding: '2%' }}>
+                <DetailComponent />
             </div>
         </div>
-    );
-};
+    </PhotosProvider>
+);
 
-export default DetailPagePhoto;
+export default DetailPage;
