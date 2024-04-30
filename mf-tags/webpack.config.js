@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: argv.mode === "development" ? "http://localhost:8080/" : "https://strong-speculoos-e3bd5e.netlify.app/"
+    publicPath:"http://localhost:8080/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
