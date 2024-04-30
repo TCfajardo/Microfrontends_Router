@@ -6,7 +6,7 @@ const CharacteresPage = () => (
     <PhotosProvider> 
         <div style={{ textAlign: 'center' }}>
             <h1>Gallery</h1>
-            <div style={{ padding: '7%' }}>
+            <div style={{ padding: '4%' }}>
                 <CardsComponent />
             </div>
         </div>
