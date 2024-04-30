@@ -44,7 +44,9 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        //"./CardsComponent": "./src/components/CardsComponents.jsx",
+        "./CardsComponent": "./src/components/CardsComponents.jsx",
+        "./Loading": "./src/components/Loading.jsx",
+        "./useFetchPhotos": "./src/Hooks/UseFetchPhotos.js",
         //"./DetailPage": "./src/components/DetailPages.jsx",
       },      
       shared: {

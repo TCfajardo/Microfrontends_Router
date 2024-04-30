@@ -1,15 +1,17 @@
 import React from 'react';
 import CardsComponent from 'mfTags/CardsComponent';
+import { PhotosProvider } from 'mfTags/useFetchPhotos'; 
 
-const CharacteresPage = () => {
-    return (
+
+const CharacteresPage = () => (
+    <PhotosProvider> {/* Envuelve con PhotosProvider */}
         <div style={{ textAlign: 'center' }}>
             <h1>Gallery</h1>
             <div style={{ padding: '7%' }}>
-                <CardsComponent /> 
+                <CardsComponent />
             </div>
         </div>
-    );
-};
+    </PhotosProvider>
+);
 
 export default CharacteresPage;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap'; // Asegúrate de tener React-Bootstrap instalado
+import { Spinner } from 'react-bootstrap';
 
 const Loading = () => (
     <div className="loading-container" style={{ textAlign: 'center', padding: '20px' }}>

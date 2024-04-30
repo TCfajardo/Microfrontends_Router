@@ -7,7 +7,7 @@ import  NavBarComponent  from "mfNavBar/NavBarComponent";
 import HomePage from "./pages/HomePage";
 import AboutPage from './pages/AboutPage';
 import CharacteresPage from "./pages/CharacteresPage";
-import DetailPagePhoto from "./pages/DetailPage";
+
 import NotFound from "./pages/NotFound";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
@@ -19,7 +19,7 @@ const App = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/Home" element={<HomePage />} />
       <Route path="/Characters" element={<CharacteresPage />} />
-      <Route path="/detail/:id" component={<DetailPagePhoto />} />
+      
       <Route path="/About" element={<AboutPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
