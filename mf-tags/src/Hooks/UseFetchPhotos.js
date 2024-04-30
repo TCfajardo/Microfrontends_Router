@@ -1,21 +1,33 @@
-import { useEffect, useState } from "react";
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-export const useFetchPhotos = () => {
-    const [photos, setPhotos] = useState([]);
+const PhotosContext = createContext();
+
+export const PhotosProvider = ({ children }) => {
+    const [photos, setPhotos] = useState(null); // Usamos `null` para verificar si se han cargado fotos
 
     useEffect(() => {
-        const getPhotos = async () => {
-            try {
-                const response = await fetch("https://starwars-databank-server.vercel.app/api/v1/species");
-                const data = await response.json();
-                setPhotos(data.data);
-            } catch (error) {
-                console.error("Error fetching photos:", error);
+        const fetchPhotos = async () => {
+            if (!photos) { // Si las fotos no están cargadas, se hace la llamada API
+                try {
+                    const response = await fetch("https://starwars-databank-server.vercel.app/api/v1/species");
+                    const data = await response.json();
+                    setPhotos(data.data);
+                } catch (error) {
+                    console.error("Error fetching photos:", error);
+                }
             }
         };
 
-        getPhotos();
-    }, []);
+        fetchPhotos();
+    }, [photos]); // El efecto se ejecutará solo si `photos` es `null`
 
-    return { photos };
+    return (
+        <PhotosContext.Provider value={photos}>
+            {children}
+        </PhotosContext.Provider>
+    );
+};
+
+export const usePhotos = () => {
+    return useContext(PhotosContext);
 };

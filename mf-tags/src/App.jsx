@@ -1,17 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-import CardsComponent from "./components/CardsComponents";
-import DetailPage from "./components/DetailPages";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CardsComponent from './components/CardsComponents';
+import { PhotosProvider } from './Hooks/UseFetchPhotos'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const App = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={CardsComponent} />
-            <Route path="/detail/:id" component={DetailPage} />
-        </Switch>
-    </BrowserRouter>
+    <PhotosProvider> 
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<CardsComponent />} />
+            </Routes>
+        </BrowserRouter>
+    </PhotosProvider>
 );
 
-ReactDOM.createRoot(document.getElementById("app")).render(<App />);
+const root = createRoot(document.getElementById("app"));
+root.render(<App />);
