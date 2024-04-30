@@ -29,7 +29,7 @@ export const PhotosProvider = ({ children }) => {
             }
         };
 
-        fetchPhotos(); // Llamar a la función para cargar las fotos
+        fetchPhotos(); 
     }, [photos, error]); // Dependencias para que solo se ejecute una vez si no hay errores ni fotos
 
     // El proveedor `PhotosProvider` envuelve a sus hijos y les proporciona el contexto `PhotosContext`.

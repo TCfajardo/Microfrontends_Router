@@ -6,23 +6,23 @@ import { Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const DetailComponent = () => {
-    const { id } = useParams(); // Obtiene el ID de la URL
-    const { photos, isLoading, error } = usePhotos(); // Usa el contexto para obtener fotos
-    const navigate = useNavigate(); // Para navegar de vuelta
+    const { id } = useParams();
+    const { photos, isLoading, error } = usePhotos(); 
+    const navigate = useNavigate(); 
 
     if (isLoading) {
-        return <Loading />; // Muestra el componente de carga mientras carga
+        return <Loading />; 
     }
 
     if (error) {
-        return <p>Error al cargar las fotos: {error.message}</p>; // Manejo de errores
+        return <p>Error al cargar las fotos: {error.message}</p>; 
     }
 
     // Encuentra el elemento por ID
     const photo = photos.find((item) => item._id === id);
 
     if (!photo) {
-        return <p>No se encontró el elemento.</p>; // Manejo de caso cuando no se encuentra el elemento
+        return <p>No se encontró el elemento.</p>; 
     }
 
     return (
@@ -31,7 +31,7 @@ const DetailComponent = () => {
             <Card.Body>
                 <Card.Title>{photo.name}</Card.Title>
                 <Card.Text>{photo.description}</Card.Text>
-                <Button variant="primary" onClick={() => navigate(-1)}>Volver</Button> {/* Botón para regresar */}
+                <Button variant="primary" onClick={() => navigate(-1)}>Volver</Button> 
             </Card.Body>
         </Card>
     );

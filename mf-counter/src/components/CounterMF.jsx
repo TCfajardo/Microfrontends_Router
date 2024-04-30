@@ -5,7 +5,7 @@ const CounterMF = ({ initialCounter }) => {
     const [counter, setCounter] = useState(initialCounter);
 
     useEffect(() => {
-        setCounter(initialCounter); // Actualiza el contador cuando la prop initialCounter cambia
+        setCounter(initialCounter);
     }, [initialCounter]);
 
     const handleIncrement = () => {

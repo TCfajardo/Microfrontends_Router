@@ -9,4 +9,4 @@ const App = () => (
     <CounterMF initialCounter={10}/>
   </div>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.createRoot(document.getElementById("app")).render(<App />);

@@ -6,10 +6,10 @@ import Loading from './Loading';
 import './CardStyled.css';
 
 const CardsComponent = () => {
-    const { photos, isLoading, error } = usePhotos(); // Asegúrate de manejar el error también
+    const { photos, isLoading, error } = usePhotos(); 
   
     if (error) {
-      return <p>Error al cargar las fotos: {error.message}</p>; // Manejo de errores
+      return <p>Error al cargar las fotos: {error.message}</p>; 
     }
   
     if (isLoading || !Array.isArray(photos)) {
