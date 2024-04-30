@@ -5,7 +5,7 @@ const deps = require("./package.json").dependencies;
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: argv.mode === "development" ? "http://localhost:8084/" : "https://zesty-concha-1eb9b0.netlify.app/"
+    publicPath: "http://localhost:8084/",
   },
 
   resolve: {
